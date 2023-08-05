@@ -12,7 +12,7 @@ def pdf_chromium_export(index_html_path: Path, output_pdf_path: Path):
     command = [
         'chromium',
         '--headless',
-        '--use-gl=desktop',
+        '--gpu-disable',
         '--print-to-pdf={}'.format(output_pdf_path),
         index_html_path.resolve().as_uri()+'?print-pdf',
     ]
